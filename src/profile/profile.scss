@@ -1,0 +1,16 @@
+.profile {
+    border: 2px solid gray;
+    border-radius: 10px;
+    color: rgb(84, 84, 84);
+    background-color: rgba(236, 237, 237, 0.5);
+    padding: 10px 15px;
+
+    &__name {
+        font-size: 16px;
+    }
+
+    &__location {
+        color: lightslategray;
+        font-weight: 700;
+    }
+}

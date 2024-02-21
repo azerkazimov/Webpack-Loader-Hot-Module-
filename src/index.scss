@@ -1,0 +1,19 @@
+@import "profile/profile";
+
+body {
+    font-style: 26px !important;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/pattern.jpg');
+    background-repeat: repeat;
+}
+
+
+
