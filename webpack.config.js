@@ -26,9 +26,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin({
-        filename: "[name].css",
-    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 
@@ -43,7 +40,6 @@ const config = {
         use: [
           isProduction ? stylesHandler : "style-loader",
           "css-loader",
-          "postcss-loader",
           "sass-loader",
         ],
       },
@@ -52,7 +48,6 @@ const config = {
         use: [
           isProduction ? stylesHandler : "style-loader",
           "css-loader",
-          "postcss-loader",
         ],
       },
       {
@@ -70,6 +65,11 @@ module.exports = () => {
   if (isProduction) {
     config.mode = "production";
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+      })
+    );
   } else {
     config.mode = "development";
   }
